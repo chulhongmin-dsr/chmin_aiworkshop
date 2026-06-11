@@ -63,7 +63,9 @@
       "WebFetch(domain:www.offshorewind.biz)",
       "WebFetch(domain:www.marinelink.com)",
       "Bash(git add *)",
-      "Bash(git commit -m 'Initial commit: Project setup with memory system and research assets *)"
+      "Bash(git commit -m 'Initial commit: Project setup with memory system and research assets *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\AI LEADER WORKSHOP_CHMIN_PRACTICE\" -Recurse)",
+      "Bash(Select-Object FullName)"
     ]
   }
 }
