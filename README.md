@@ -1,144 +1,170 @@
 # 해상풍력 로프 시장 모니터링 시스템
 
-DSR의 해상풍력(Offshore Wind) 로프 시장 진출을 지원하는 글로벌 시장 모니터링 및 정보 수집 시스템입니다.
-
-## 📊 프로젝트 개요
-
-- **목표:** 해상풍력 로프 시장의 글로벌 트렌드 모니터링
-- **주기:** 주 1회 자동 리포트 생성
-- **수신자:** CHMIN@DSR.COM
-- **언어:** 한국어
-
-## 🏗️ 프로젝트 구조
-
-```
-.
-├── README.md                          # 프로젝트 개요 (현재 파일)
-├── ONBOARDING.md                      # 초기 설정 가이드
-├── IMPROVEMENTS.md                    # 시스템 개선점 이슈 목록
-├── .claude/                           # Claude Code 설정
-│   └── settings.local.json            # 프로젝트 설정
-├── memory/                            # 프로젝트 메모리 시스템
-│   ├── MEMORY.md                      # 메모리 인덱스
-│   ├── user_profile.md                # 사용자 정보
-│   └── project_offshore_rope.md       # 프로젝트 정보
-├── docs/                              # 프로젝트 문서
-├── research/                          # 연구 자료 및 논문
-├── reports/                           # 생성된 리포트
-├── config/                            # 설정 파일
-├── mooring_paper.pdf                  # 해양 관련 연구 자료
-└── .github/                           # GitHub 관련 설정
-    └── CONTRIBUTING.md                # 기여 가이드
-```
-
-## 📋 핵심 기능
-
-### 1. 주간 시장 리포트 (자동화)
-**스케줄:** 매주 월요일 오전 9시 (한국 시간)
-
-자동으로 생성되는 리포트 내용:
-- 🔬 **재료/기술 개발** - 최신 로프 재료 혁신, 코팅 기술, 내구성 개선
-- 📈 **시장 규모/성장률** - 글로벌 시장 현황, CAGR, 지역별 분석
-- ⚖️ **규제/인증 표준** - DNV, ABS, GL 등 국제 표준 및 규제 업데이트
-- 🏢 **경쟁사 동향** - 주요 로프 제조업체 뉴스 및 신제품 정보
-
-**수신 방식:** 이메일 (CHMIN@DSR.COM)
-
-### 2. 메모리 시스템
-프로젝트의 지속성을 위해 다음 정보를 기억합니다:
-- 사용자 프로필 및 선호도
-- 프로젝트 현황 및 목표
-- 참고 자료 위치
-
-**메모리 파일:** `memory/MEMORY.md`에서 확인
-
-### 3. GitHub 이슈 추적
-프로젝트 개선점과 할 일을 이슈로 관리합니다.
-
-**현재 이슈:** https://github.com/chulhongmin-dsr/chmin_aiworkshop/issues
+DSR의 해상풍력 로프 시장 진출을 지원하는 온디맨드 시장 정보 수집 시스템.
 
 ## 🚀 빠른 시작
 
-### 1단계: 메모리 시스템 확인
+### 리포트 요청 (자동 검증 포함)
 ```bash
-ls memory/
+"해상풍력 로프 시장 리포트 만들어줘"
+또는
+"offshore rope market report: Europe, China, Korea (2025)"
 ```
-다음 파일들이 있는지 확인:
-- `MEMORY.md` - 메모리 인덱스
-- `user_profile.md` - 사용자 정보
-- `project_offshore_rope.md` - 프로젝트 정보
 
-### 2단계: 초기 설정 확인
-`ONBOARDING.md`를 읽고 필요한 설정을 진행하세요.
+**프로세스:**
+1. ✅ **검증** (요청 분석, 중복 확인, 범위 검증)
+2. 📊 **생성** (~2분, ~42K Token)
+3. ✅ **품질 확인** (구조, 범위, 출처, 정확성)
 
-### 3단계: 주간 리포트 확인
-- **매주 월요일 오전 9시**에 자동으로 리포트가 생성됩니다
-- 이메일 (CHMIN@DSR.COM)에서 확인
+**결과:** 검증된 리포트 (`offshore_wind_rope_report_*.md` 또는 `.html`)
 
-### 4단계: GitHub 이슈 처리
-현재 미해결 이슈들을 확인하고 처리합니다:
-https://github.com/chulhongmin-dsr/chmin_aiworkshop/issues
+### 리포트 내용
+- 📍 **지역**: 유럽, 중국, 한국
+- 📅 **기간**: 2025년만
+- 📊 **내용**: 
+  - 시장 규모/성장률
+  - 재료/기술 개발
+  - 경쟁사 동향
+  - 규제/표준 변화
+- 🔗 **출처**: 산업 뉴스 + 규제 기관 (논문 제외)
 
-## 📚 문서
+## 📁 프로젝트 구조
 
-| 문서 | 설명 |
-|------|------|
-| [ONBOARDING.md](ONBOARDING.md) | 프로젝트 초기 설정 및 사용 방법 |
-| [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md) | Git 워크플로우 및 커밋 규칙 |
-| [memory/MEMORY.md](memory/MEMORY.md) | 프로젝트 메모리 인덱스 |
+```
+.
+├── README.md                          # 프로젝트 개요 (현재)
+├── CLAUDE.md                          # Claude Code 협업 규칙
+├── SOUL.md                            # 프로젝트 배경 & 가치관
+├── ONBOARDING.md                      # 초기 설정 가이드
+├── memory/                            # 프로젝트 메모리
+│   ├── MEMORY.md
+│   ├── user_profile.md
+│   └── project_offshore_rope.md
+├── .github/
+│   └── CONTRIBUTING.md                # Git 협업 규칙
+├── docs/                              # 문서
+├── research/                          # 연구 자료
+├── reports/                           # 생성된 리포트
+└── config/                            # 설정 파일
+```
 
-## 🔧 기술 스택
+## 📖 문서 가이드
 
-- **모니터링 도구:** Claude Code + Claude API
-- **저장소:** GitHub (chulhongmin-dsr/chmin_aiworkshop)
-- **일정 관리:** Claude Code Scheduled Tasks
-- **자동화:** GitHub API + Git
+| 문서 | 역할 | 읽을 때 |
+|------|------|---------|
+| **README.md** | 프로젝트 개요 | 처음 시작할 때 |
+| **SOUL.md** | 프로젝트 배경/목표 | 왜 이렇게 하는지 알고 싶을 때 |
+| **CLAUDE.md** | Claude 협업 규칙 | Claude에게 일할 때 |
+| **ONBOARDING.md** | 세부 설정 가이드 | 처음 설정할 때 |
+| **.github/CONTRIBUTING.md** | Git 규칙 | 코드 기여할 때 |
 
-## 📊 시장 정보 수집 출처
+## 🎯 사용 시나리오
 
-**학술 자료:**
-- Google Scholar
-- ResearchGate
+### 시나리오 1: 시장 정보 필요
+```
+사용자: "2025년 중국 해상풍력 로프 시장 현황 궁금해"
+↓
+Claude: 온디맨드 리포트 생성
+↓
+결과: offshore_wind_rope_report_2025_06_11.md
+```
 
-**산업 리포트:**
-- Grand View Research
-- Allied Market Research
-- Mordor Intelligence
+### 시나리오 2: 경쟁사 추적
+```
+사용자: "Lankhorst 최신 소식은?"
+↓
+Claude: 2025년 최신 뉴스 검색
+↓
+결과: 신제품, 기술, 계약 정보
+```
 
-**규제/표준:**
-- DNV (Det Norske Veritas)
-- ABS (American Bureau of Shipping)
-- GL (Germanischer Lloyd)
+### 시나리오 3: 규제 변화
+```
+사용자: "DNV, ABS 최근 표준 변화 있어?"
+↓
+Claude: 규제 기관 뉴스 검색
+↓
+결과: 2026년 IMO SOLAS 발효 등 정보
+```
 
-**경쟁사 정보:**
-- Samson Rope
-- Cortland
-- Lankhorst
-- Bridon-Bekaert
+## 💾 메모리 시스템
 
-## 📞 문의 및 지원
+**자동 관리됨** - Claude가 프로젝트 정보를 자동으로 기억합니다.
 
-프로젝트 관련 문의:
-- 담당자: Chulhong Min (CHMIN@DSR.COM)
-- 회사: DSR (합성섬유로프 제조)
-- 경력: 27년
+**위치:** `~/.claude/projects/chmin_aiworkshop/memory/`
 
-## 📝 라이선스 및 기여
+**파일:**
+- `MEMORY.md` - 인덱스
+- `user_profile.md` - 사용자 (DSR, 27년 경력)
+- `project_offshore_rope.md` - 프로젝트 (온디맨드, 2025년, 3개 지역)
 
-이 프로젝트에 기여하고 싶으시면 [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md)를 참고하세요.
+## 📊 시스템 성능
 
-- 커밋 메시지 규칙 (Conventional Commits)
-- 브랜치 명명 규칙
-- PR 프로세스
+| 항목 | 값 |
+|------|-----|
+| **생성 시간** | ~2분 |
+| **Token 사용** | ~42K/리포트 |
+| **정보 신뢰도** | 매우 높음 (산업+규제) |
+| **지역 범위** | 유럽, 중국, 한국 |
+| **기간** | 2025년 |
 
-## 🎯 다음 단계
+## 🔧 기술
 
-1. ✅ ONBOARDING.md 읽기
-2. ✅ Scheduled Task 권한 설정
-3. ✅ 첫 번째 주간 리포트 확인
-4. ✅ GitHub 이슈 처리 시작
+- **수집**: Web Search (병렬 처리)
+- **필터링**: 2025년 + 3개 지역 + 논문 제외
+- **저장**: Markdown 리포트
+- **버전 관리**: Git
+
+## 🤝 협업
+
+### Claude와 작업
+→ `CLAUDE.md` 참고
+
+### Git 커밋
+→ `.github/CONTRIBUTING.md` 참고
+
+### 초기 설정
+→ `ONBOARDING.md` 참고
+
+## 📞 문제 해결
+
+**리포트 생성이 안 됨**
+1. `ONBOARDING.md` 설정 확인
+2. `memory/project_offshore_rope.md` 확인
+3. 필요하면 "해상풍력 로프 시장 리포트 다시 만들어줘" 요청
+
+**메모리가 초기화됨**
+1. `memory/init_memory.py` 실행
+2. 또는 Claude에 "메모리 초기화해줘" 요청
+
+## 🎯 주요 의사결정
+
+### 왜 온디맨드 방식?
+- 자동화는 비효율 (매주 생성하면 Token 낭비)
+- 필요할 때만 생성이 효율적
+
+### 왜 2025년만?
+- 현재 의사결정에 필요한 최신 정보
+- 과거 자료는 필요시 별도 조사
+
+### 왜 3개 지역?
+- 유럽: 기술/표준 선도
+- 중국: 가장 큰 시장
+- 한국: DSR의 홈마켓
+
+### 왜 논문 제외?
+- 발행 지연 (2-3년)
+- 산업 뉴스가 더 유용
+
+더 자세한 배경 → `SOUL.md` 참고
+
+## 📅 일정
+
+- **2026-06-11**: 온디맨드 시스템 최적화 완료
+- **2026-08-11**: 2개월 운영 리뷰 (예정)
+- **2027년**: 의사결정 지원 고도화
 
 ---
 
-**마지막 업데이트:** 2026-06-11  
-**프로젝트 상태:** 🟢 Active
+**최종 업데이트:** 2026-06-11  
+**상태:** 🟢 Active & Optimized
